@@ -1,10 +1,10 @@
-
+import { Header } from "./components/Header"
 
 const App = () => {
   return (
-    <div> 
-      <h1>Countries Searcher</h1>
-    </div>
+    <> 
+      <Header />
+    </>
   );
 }
 
