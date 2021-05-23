@@ -1,25 +1,25 @@
 import { Container, DropdownBtn, DropDownDiv, Icon, RegionBtn } from "./styles";
 
-export const DropDownMenu = () => (
+export const DropDownMenu = ({handleFilter}) => (
     <Container>
         <DropdownBtn>
             Filter by Region
             <Icon className="fas fa-caret-down"/>
         </DropdownBtn>
         <DropDownDiv>
-            <RegionBtn>
+            <RegionBtn onClick={handleFilter}>
                 Africa
             </RegionBtn>
-            <RegionBtn>
+            <RegionBtn onClick={handleFilter}>
                 Americas
             </RegionBtn>
-            <RegionBtn>
+            <RegionBtn onClick={handleFilter}>
                 Asia
             </RegionBtn>
-            <RegionBtn>
+            <RegionBtn onClick={handleFilter}>
                 Europe
             </RegionBtn>
-            <RegionBtn>
+            <RegionBtn onClick={handleFilter}>
                 Oceania
             </RegionBtn>
         </DropDownDiv>

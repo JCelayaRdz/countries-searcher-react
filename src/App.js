@@ -31,12 +31,18 @@ const App = () => {
   
   const handleOnChange = event => setCountryToSearch(event.target.value)
 
+  const handleFilter = (event) => {
+    const regionToShow = event.target.innerHTML
+    setCountriesToShow(countries.filter(c => c.region === regionToShow))
+  }
+
   return (
     <> 
       <Header />
       <FormContainer
         handleOnSubmit={handleOnSubmit}
         handleOnChange={handleOnChange}
+        handleFilter={handleFilter}
         countryToSearch={countryToSearch}
       />
       <CardsContainer 

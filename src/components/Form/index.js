@@ -1,6 +1,6 @@
 import { SearchIcon, StyledForm, Input } from "./styles";
 
-export const Form = ({countryToSearch, handleOnSubmit, handleOnChange}) => (
+export const Form = ({handleOnSubmit, handleOnChange, countryToSearch}) => (
     <StyledForm onSubmit={handleOnSubmit}>
         <SearchIcon className="fas fa-search"/>
         <Input 
