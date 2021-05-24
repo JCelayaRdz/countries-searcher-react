@@ -1,11 +1,11 @@
 import { StyledNavbar, Title, ThemeBtn } from './styles'
 
-export const Navbar = () => (
+export const Navbar = ({handleToggleTheme}) => (
     <StyledNavbar>
         <Title>Where in the world?</Title>
         <div>
             <i className="fas fa-moon"></i>
-            <ThemeBtn>
+            <ThemeBtn onClick={handleToggleTheme}>
                 Dark Mode
             </ThemeBtn>
         </div>

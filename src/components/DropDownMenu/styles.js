@@ -11,8 +11,8 @@ export const Container = styled.div`
 
 export const DropdownBtn = styled.button`
     padding: 15px;
-    background-color: hsl(209, 23%, 22%);
-    color: hsl(0, 0%, 100%);
+    background-color: ${props => props.theme.bg};
+    color: ${props => props.theme.text};
     border: none;
     outline: none;
     border-radius: 7px;

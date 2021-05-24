@@ -6,8 +6,8 @@ export const StyledNavbar = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: hsl(0, 0%, 100%);
-    background-color: hsl(209, 23%, 22%);
+    color: inherit;
+    background-color: inherit;
     margin: 0 auto;
 
     @media (max-width: 768px) {
@@ -16,7 +16,7 @@ export const StyledNavbar = styled.div`
 `
 
 export const Title = styled.h1`
-    color: hsl(0, 0%, 100%);
+    color: inherit;
     font-size: 28px;
     margin-left: 5rem;
 

@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const CardContainer = styled.article`
     box-sizing: border-box;
-    background-color: hsl(209, 23%, 22%);
+    background-color: ${props => props.theme.bg};
     border-radius: 7px;
     overflow: hidden;
-    color: hsl(0, 0%, 100%);
+    color: ${props => props.theme.text};
     cursor: pointer;
 `
 

@@ -1,10 +1,12 @@
 import { Navbar } from '../Navbar'
 import { StyledHeader } from './styles'
 
-export const Header = () => {
+export const Header = ({handleToggleTheme}) => {
     return(
         <StyledHeader>
-            <Navbar/>
+            <Navbar
+                handleToggleTheme={handleToggleTheme}
+            />
         </StyledHeader>
     )
 }

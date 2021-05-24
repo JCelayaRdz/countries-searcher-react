@@ -1,7 +1,7 @@
 import { CardContainer, Img, P, Span, Title, Info} from "./styles";
 
-export const Card = ({country}) => (
-    <CardContainer>
+export const Card = ({country, handleShowModal}) => (
+    <CardContainer onClick={handleShowModal}>
         <Img src={country.flag}/>
         <Info>
             <Title>{country.name}</Title>

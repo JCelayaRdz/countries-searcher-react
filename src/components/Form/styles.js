@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 export const StyledForm = styled.form`
     width: 40%;
-    background-color: hsl(209, 23%, 22%);
+    background-color: ${props => props.theme.bg};
     padding: 15px;
     border-radius: 7px;
-    color: hsl(0, 0%, 100%);
+    color: ${props => props.theme.text};
 
     @media (max-width: 768px) {
         width: 100%;
