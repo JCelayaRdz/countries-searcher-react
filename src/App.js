@@ -73,24 +73,24 @@ const App = () => {
 
   return (
     <ThemeProvider theme={mode === 'light' ? lightTheme : darkTheme}> 
-      <Header 
-        handleToggleTheme={handleToggleTheme}
-      />
-      <Modal
-        showModal={showModal}
-        setShowModal={setShowModal}
-        modalCountry={modalCountry}
-      />
-      <FormContainer
-        handleOnSubmit={handleOnSubmit}
-        handleOnChange={handleOnChange}
-        handleFilter={handleFilter}
-        countryToSearch={countryToSearch}
-      />
-      <CardsContainer 
-        countries={countriesToShow}
-        handleShowModal={handleShowModal}
-      />
+        <Header 
+          handleToggleTheme={handleToggleTheme}
+        />
+        <Modal
+          showModal={showModal}
+          setShowModal={setShowModal}
+          modalCountry={modalCountry}
+        />
+        <FormContainer
+          handleOnSubmit={handleOnSubmit}
+          handleOnChange={handleOnChange}
+          handleFilter={handleFilter}
+          countryToSearch={countryToSearch}
+        />
+        <CardsContainer 
+          countries={countriesToShow}
+          handleShowModal={handleShowModal}
+        />
     </ThemeProvider>
   );
 }
