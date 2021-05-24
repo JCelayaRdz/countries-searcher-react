@@ -4,15 +4,27 @@ import { ModalBtn } from '../Modal/styles'
 export const InfoContainer = styled.div`
     margin-top: 3rem;
     display: flex;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 export const CountryImg = styled.img`
     height: 300px;
+
+    @media (max-width: 768px) {
+        height: 200px;
+    }
 `
 
 export const TitleContainer = styled.div`
     color: inherit;
     margin-left: 4rem;
+
+    @media (max-width: 768px) {
+        margin-left: 0;
+    }
 `
 
 export const Title = styled.h2`
@@ -25,6 +37,12 @@ export const CountryInfo = styled(TitleContainer)`
     font-size: 14px;
     justify-content: space-between;
     margin-left: 0;
+
+    @media (max-width: 768px) {
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+    }
 `
 export const BordersContainer = styled(TitleContainer)`
     margin-left: 0;

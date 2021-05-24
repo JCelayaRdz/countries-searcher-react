@@ -11,6 +11,10 @@ export const ModalContainer = styled.div`
     left: 50%;
     top: 80px;
     transform: translateX(-50%);
+
+    @media (max-width: 768px) {
+        height: 90vh;
+    }
 `
 
 export const ModalBtn = styled.button`
@@ -23,6 +27,10 @@ export const ModalBtn = styled.button`
     border-radius: 7px;
     text-align: center;
     width: 7%;
+
+    @media (max-width: 768px) {
+        width: 30%;
+    }
 `
 
 export const Icon = styled.i`

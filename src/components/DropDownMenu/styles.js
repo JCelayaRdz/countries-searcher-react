@@ -4,7 +4,7 @@ export const Container = styled.div`
     position: relative;
     :hover > div,
     :active > div {
-        display: flex;
+        display: ${props => props.showMenu ? "flex" : "none"};
         flex-direction: column;
     }
 `

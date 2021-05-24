@@ -2,7 +2,7 @@ import { Container } from "./styles"
 import { Form } from '../Form'
 import { DropDownMenu } from "../DropDownMenu"
 
-export const FormContainer = ({handleOnSubmit, handleOnChange, handleFilter, countryToSearch}) => (
+export const FormContainer = ({handleOnSubmit, handleOnChange, handleFilter, countryToSearch, showMenu, handleShowMenu}) => (
     <Container>
         <Form
             handleOnSubmit={handleOnSubmit}
@@ -11,6 +11,8 @@ export const FormContainer = ({handleOnSubmit, handleOnChange, handleFilter, cou
         />
         <DropDownMenu
             handleFilter={handleFilter}
+            showMenu={showMenu}
+            handleShowMenu={handleShowMenu}
         />
     </Container>
 )

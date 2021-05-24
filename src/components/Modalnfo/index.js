@@ -29,7 +29,7 @@ export const ModalInfo = ({country}) => {
                                 {c}
                             </BorderBtn>
                         )}
-                </BordersContainer> 
+                </BordersContainer>
              : <div></div>
             }
         </TitleContainer>

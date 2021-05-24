@@ -1,8 +1,8 @@
 import { Container, DropdownBtn, DropDownDiv, Icon, RegionBtn } from "./styles";
 
-export const DropDownMenu = ({handleFilter}) => (
-    <Container>
-        <DropdownBtn>
+export const DropDownMenu = ({handleFilter, showMenu, handleShowMenu}) => (
+    <Container showMenu={showMenu}>
+        <DropdownBtn onClick={handleShowMenu}>
             Filter by Region
             <Icon className="fas fa-caret-down"/>
         </DropdownBtn>

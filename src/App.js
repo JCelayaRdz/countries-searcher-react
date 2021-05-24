@@ -12,6 +12,7 @@ const App = () => {
   const [showModal, setShowModal] = useState(false)
   const [modalCountry, setModalCountry] = useState({})
   const [mode, setMode] = useState('dark')
+  const [showMenu, setShowMenu] = useState(false)
   const apiUrl = 'https://restcountries.eu/rest/v2/all'
 
   useEffect(() => {
@@ -40,6 +41,8 @@ const App = () => {
     const regionToShow = event.target.innerHTML
     setCountriesToShow(countries.filter(c => c.region === regionToShow))
   }
+
+  const handleShowMenu = () => showMenu ? setShowMenu(false) : setShowMenu(true)
 
   const handleShowModal = e => {
     const card = e.target.parentNode
@@ -86,6 +89,8 @@ const App = () => {
           handleOnChange={handleOnChange}
           handleFilter={handleFilter}
           countryToSearch={countryToSearch}
+          showMenu={showMenu}
+          handleShowMenu={handleShowMenu}
         />
         <CardsContainer 
           countries={countriesToShow}
