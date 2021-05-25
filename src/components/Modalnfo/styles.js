@@ -1,55 +1,81 @@
 import styled from 'styled-components'
-import { ModalBtn } from '../Modal/styles'
 
 export const InfoContainer = styled.div`
     margin-top: 3rem;
     display: flex;
+    height: 100%;
 
     @media (max-width: 768px) {
         flex-direction: column;
+        font-size: 14px;
     }
 `
 
 export const CountryImg = styled.img`
     height: 300px;
+    object-fit: contain;
 
     @media (max-width: 768px) {
         height: 200px;
     }
 `
-
-export const TitleContainer = styled.div`
+export const CountryInfo = styled.div`
     color: inherit;
+    width: 50vw;
     margin-left: 4rem;
 
     @media (max-width: 768px) {
         margin-left: 0;
+        width: 90vw;
     }
 `
 
-export const Title = styled.h2`
-    margin: 0;
-`
-
-export const CountryInfo = styled(TitleContainer)`
+export const TextInfo = styled.div`
     display: flex;
-    width: 30vw;
-    font-size: 14px;
+    width: 40vw;
     justify-content: space-between;
-    margin-left: 0;
+    flex-wrap: wrap;
 
     @media (max-width: 768px) {
-        width: 90%;
+        height: 80%;
         flex-direction: column;
-        justify-content: center;
+        align-content: space-between;
     }
 `
-export const BordersContainer = styled(TitleContainer)`
-    margin-left: 0;
-    justify-content: space-between;
+
+export const List = styled.ul`
+    line-height: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: 768px) {
+        width: 70vw;
+    }
 `
 
-export const BorderBtn = styled(ModalBtn)`
-    width: auto;
-    margin-left: 1rem;
+export const P = styled.p`
+    display: inline-block;
+`
+
+export const ButtonContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    @media (max-width: 768px) {
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+`
+
+export const Button = styled.button`
+    background-color: ${props => props.theme.bg};
+    padding: 5px;
+    width: 10%;
+    border: none;
+    border-radius: 5px;
+    display: inline;
+    margin: 0 0.2rem;
+    color: inherit;
 `

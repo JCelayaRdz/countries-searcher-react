@@ -1,38 +1,37 @@
-import { P, Span } from "../Card/styles"
-import { InfoContainer, CountryImg, TitleContainer, Title, CountryInfo, BordersContainer, BorderBtn } from './styles'
+import { InfoContainer, CountryImg, CountryInfo, TextInfo, List, Button, P, ButtonContainer } from './styles'
 
 export const ModalInfo = ({country}) => {
+
     return(
         <InfoContainer>
-        <CountryImg src={country.flag}/>
-        <TitleContainer>
-            <Title>{country.name}</Title>
+            <CountryImg src={country.flag}/>
             <CountryInfo>
-                <div>
-                    <P>Native: <Span>{country.nativeName}</Span></P>
-                    <P>Population: <Span>{country.population}</Span></P>
-                    <P>Region: <Span>{country.region}</Span></P>
-                    <P>Subregion: <Span>{country.subregion}</Span></P>
-                    <P>Capital: <Span>{country.capital}</Span></P>
-                </div>
-                <div>
-                    <P>Top level domain: <Span>{country.topLevelDomain}</Span></P>
-                    <P>Currencies: <Span>{country.currencies[0].code}</Span></P>
-                    <P>Languages: <Span>{country.languages.map(l => <span>{l.name} </span>)}</Span></P>
-                </div>
+                <h2>{country.name}</h2>
+                <TextInfo>
+                    <List>
+                        <li>Native name: {country.nativeName}</li>
+                        <li>Population: {country.population}</li>
+                        <li>Region: {country.region}</li>
+                        <li>Sub Region: {country.subregion}</li>
+                        <li>Capital: {country.capital}</li>
+                    </List>
+                    <List>
+                        <li>Top Level Domain: {country.topLevelDomain}</li>
+                        <li>Currencies: {country.currencies[0].code}</li>
+                        <li>Languages: {country.languages.map(l => l.name).join(' ')}</li>
+                    </List>
+                </TextInfo>
+                <ButtonContainer>
+                    Border countries: 
+                    { country.borders.length > 0 ? 
+                        <div>
+                            {country.borders.map(c => <Button key={c}>{c}</Button>)}
+                        </div>
+                        :
+                        <P>No border countries</P>
+                    }
+                </ButtonContainer>
             </CountryInfo>
-            {country.borders ?
-                <BordersContainer>
-                        Border countries:
-                        {country.borders.map(c => 
-                            <BorderBtn key={c}>
-                                {c}
-                            </BorderBtn>
-                        )}
-                </BordersContainer>
-             : <div></div>
-            }
-        </TitleContainer>
-    </InfoContainer>
+        </InfoContainer>
     )
 }

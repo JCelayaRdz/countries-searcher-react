@@ -14,6 +14,7 @@ export const ModalContainer = styled.div`
 
     @media (max-width: 768px) {
         height: 90vh;
+        overflow: scroll;
     }
 `
 
@@ -30,6 +31,7 @@ export const ModalBtn = styled.button`
 
     @media (max-width: 768px) {
         width: 30%;
+        margin-top: 2rem;
     }
 `
 
