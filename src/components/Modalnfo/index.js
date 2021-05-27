@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { InfoContainer, CountryImg, CountryInfo, TextInfo, List, Button, ButtonContainer } from './styles'
+import { InfoContainer, CountryImg, CountryInfo, TextInfo, List, Button, ButtonContainer,P } from './styles'
 
 export const ModalInfo = ({ country, setCountry }) => {
   const [borderCountries, setBorderCountries] = useState([])
@@ -21,24 +21,50 @@ export const ModalInfo = ({ country, setCountry }) => {
                 <h2>{country.name}</h2>
                 <TextInfo>
                     <List>
-                        <li>Native name: {country.nativeName}</li>
-                        <li>Population: {country.population}</li>
-                        <li>Region: {country.region}</li>
-                        <li>Sub Region: {country.subregion}</li>
-                        <li>Capital: {country.capital}</li>
+                        <li>
+                            <P>Native name: </P> 
+                            {country.nativeName}
+                        </li>
+                        <li>
+                            <P>Population: </P>
+                            {country.population}
+                        </li>
+                        <li>
+                            <P>Region: </P> 
+                            {country.region}
+                        </li>
+                        <li>
+                            <P>Subregion: </P>
+                            {country.subregion}
+                        </li>
+                        <li>
+                            <P>Capital: </P>
+                            {country.capital}
+                        </li>
                     </List>
                     <List>
-                        <li>Top Level Domain: {country.topLevelDomain}</li>
-                        <li>Currencies: {country.currencies[0].code}</li>
-                        <li>Languages: {country.languages.map(l => l.name).join(' ')}</li>
+                        <li>
+                            <P>Top Level Domain: </P> 
+                            {country.topLevelDomain}
+                        </li>
+                        <li>
+                            <P>Currencies: </P>
+                            {country.currencies[0].code}
+                        </li>
+                        <li>
+                            <P>Languages: </P>
+                            {country.languages.map(l => l.name).join(', ')}
+                        </li>
                     </List>
                 </TextInfo>
                 <ButtonContainer>
                     {borderCountries.length > 0
                       ? <>
-                            <span>Border countries:</span>
+                            <P>Border countries:</P>
                             {borderCountries.map(c =>
-                                <Button onClick={() => setCountry(c)}>
+                                <Button 
+                                    key={c.name} 
+                                    onClick={() => setCountry(c)}>
                                     {c.name}
                                 </Button>)
                             }

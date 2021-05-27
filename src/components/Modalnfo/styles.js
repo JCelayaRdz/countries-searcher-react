@@ -38,8 +38,8 @@ export const TextInfo = styled.div`
 
     @media (max-width: 768px) {
         height: 50%;
-        flex-direction: column;
-        align-content: space-between;
+        width: 90vw;
+        flex-direction: row;
     }
 `
 
@@ -48,18 +48,14 @@ export const List = styled.ul`
     list-style: none;
     margin: 0;
     padding: 0;
-
-    @media (max-width: 768px) {
-        width: 70vw;
-    }
 `
 
 export const P = styled.p`
-    display: inline-block;
+    display: inline;
+    font-weight: 600;
 `
 
 export const ButtonContainer = styled.div`
-    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -67,11 +63,15 @@ export const ButtonContainer = styled.div`
 
     @media (max-width: 768px) {
         flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 10rem;
     }
 `
 
 export const Button = styled.button`
     background-color: ${props => props.theme.bg};
+    cursor: pointer;
+    text-align: center;
     display: inline-block;
     padding: 5px;
     width: auto;
@@ -80,4 +80,8 @@ export const Button = styled.button`
     display: inline;
     margin: 0 0.2rem;
     color: inherit;
+
+    @media (max-width: 768px) {
+        margin: 0.5rem 0;
+    }
 `

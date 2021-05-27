@@ -13,8 +13,7 @@ export const ModalContainer = styled.div`
     transform: translateX(-50%);
 
     @media (max-width: 768px) {
-        height: 90vh;
-        overflow: scroll;
+        overflow-y: scroll;
     }
 `
 
