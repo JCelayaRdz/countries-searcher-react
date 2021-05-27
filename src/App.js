@@ -83,6 +83,7 @@ const App = () => {
           showModal={showModal}
           setShowModal={setShowModal}
           modalCountry={modalCountry}
+          setModalCountry={setModalCountry}
         />
         <FormContainer
           handleOnSubmit={handleOnSubmit}

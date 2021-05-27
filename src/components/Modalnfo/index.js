@@ -1,6 +1,18 @@
-import { InfoContainer, CountryImg, CountryInfo, TextInfo, List, Button, P, ButtonContainer } from './styles'
+import { useEffect, useState } from 'react'
+import { InfoContainer, CountryImg, CountryInfo, TextInfo, List, Button, ButtonContainer} from './styles'
 
-export const ModalInfo = ({country}) => {
+export const ModalInfo = ({country, setCountry}) => {
+    const [borderCountries, setBorderCountries] = useState([])
+
+    useEffect(() => {
+        Promise.all(
+            country.borders.map(countryCode =>
+                    fetch(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
+                    .then(res => res.json())
+                    .then(data => data) 
+            ))
+            .then(countries => setBorderCountries([...countries]))
+    }, [country])
 
     return(
         <InfoContainer>
@@ -22,13 +34,16 @@ export const ModalInfo = ({country}) => {
                     </List>
                 </TextInfo>
                 <ButtonContainer>
-                    Border countries: 
-                    { country.borders.length > 0 ? 
-                        <div>
-                            {country.borders.map(c => <Button key={c}>{c}</Button>)}
-                        </div>
-                        :
-                        <P>No border countries</P>
+                    {borderCountries.length > 0 ?
+                        <>
+                            <span>Border countries:</span>
+                            {borderCountries.map(c => 
+                                <Button onClick={() => setCountry(c)}>
+                                    {c.name}
+                                </Button>)
+                            }
+                        </>
+                        : <></>
                     }
                 </ButtonContainer>
             </CountryInfo>

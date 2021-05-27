@@ -26,7 +26,7 @@ export const CountryInfo = styled.div`
 
     @media (max-width: 768px) {
         margin-left: 0;
-        width: 90vw;
+        width: 70vw;
     }
 `
 
@@ -37,7 +37,7 @@ export const TextInfo = styled.div`
     flex-wrap: wrap;
 
     @media (max-width: 768px) {
-        height: 80%;
+        height: 50%;
         flex-direction: column;
         align-content: space-between;
     }
@@ -59,20 +59,22 @@ export const P = styled.p`
 `
 
 export const ButtonContainer = styled.div`
+    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
 
     @media (max-width: 768px) {
-        margin-top: 1rem;
         flex-direction: column;
     }
 `
 
 export const Button = styled.button`
     background-color: ${props => props.theme.bg};
+    display: inline-block;
     padding: 5px;
-    width: 10%;
+    width: auto;
     border: none;
     border-radius: 5px;
     display: inline;
