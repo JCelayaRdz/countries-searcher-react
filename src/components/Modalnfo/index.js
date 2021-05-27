@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react'
-import { InfoContainer, CountryImg, CountryInfo, TextInfo, List, Button, ButtonContainer} from './styles'
+import { InfoContainer, CountryImg, CountryInfo, TextInfo, List, Button, ButtonContainer } from './styles'
 
-export const ModalInfo = ({country, setCountry}) => {
-    const [borderCountries, setBorderCountries] = useState([])
+export const ModalInfo = ({ country, setCountry }) => {
+  const [borderCountries, setBorderCountries] = useState([])
 
-    useEffect(() => {
-        Promise.all(
-            country.borders.map(countryCode =>
-                    fetch(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
-                    .then(res => res.json())
-                    .then(data => data) 
-            ))
-            .then(countries => setBorderCountries([...countries]))
-    }, [country])
+  useEffect(() => {
+    Promise.all(
+      country.borders.map(countryCode =>
+        fetch(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
+          .then(res => res.json())
+          .then(data => data)
+      ))
+      .then(countries => setBorderCountries([...countries]))
+  }, [country])
 
-    return(
+  return (
         <InfoContainer>
             <CountryImg src={country.flag}/>
             <CountryInfo>
@@ -34,19 +34,19 @@ export const ModalInfo = ({country, setCountry}) => {
                     </List>
                 </TextInfo>
                 <ButtonContainer>
-                    {borderCountries.length > 0 ?
-                        <>
+                    {borderCountries.length > 0
+                      ? <>
                             <span>Border countries:</span>
-                            {borderCountries.map(c => 
+                            {borderCountries.map(c =>
                                 <Button onClick={() => setCountry(c)}>
                                     {c.name}
                                 </Button>)
                             }
                         </>
-                        : <></>
+                      : <></>
                     }
                 </ButtonContainer>
             </CountryInfo>
         </InfoContainer>
-    )
+  )
 }

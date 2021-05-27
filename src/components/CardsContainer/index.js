@@ -1,8 +1,8 @@
 import { Card } from '../Card'
 import { Container } from './styles'
 
-export const CardsContainer = ({countries, handleShowModal}) => {
-    return(
+export const CardsContainer = ({ countries, handleShowModal }) => {
+  return (
     <Container>
         {countries.map(country => (
             <Card
@@ -12,5 +12,5 @@ export const CardsContainer = ({countries, handleShowModal}) => {
             />
         ))}
     </Container>
-    )
+  )
 }

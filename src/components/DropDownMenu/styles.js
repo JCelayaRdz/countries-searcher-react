@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
     position: relative;
     :hover > div,
     :active > div {
-        display: ${props => props.showMenu ? "flex" : "none"};
+        display: ${props => props.showMenu ? 'flex' : 'none'};
         flex-direction: column;
     }
 `

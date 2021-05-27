@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const CardContainer = styled.article`
     box-sizing: border-box;
@@ -33,7 +33,7 @@ export const Div = styled.div`
 export const Span = styled.span`
     font-weight: 400;
 `
-    
+
 export const P = styled.p`
     font-weight: 600;
 `

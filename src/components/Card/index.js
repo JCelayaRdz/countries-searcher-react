@@ -1,17 +1,17 @@
-import { CardContainer, Img, P, Span, Title, Info} from "./styles";
+import { CardContainer, Img, P, Span, Title, Info } from './styles'
 
-export const Card = ({country, handleShowModal}) => (
+export const Card = ({ country, handleShowModal }) => (
     <CardContainer onClick={handleShowModal}>
         <Img src={country.flag}/>
         <Info>
             <Title>{country.name}</Title>
-            <P> Population: 
+            <P> Population:
                 <Span>{country.population}</Span>
             </P>
-            <P> Region: 
+            <P> Region:
                 <Span>{country.region}</Span>
             </P>
-            <P> Capital: 
+            <P> Capital:
                 <Span>{country.capital}</Span>
             </P>
         </Info>

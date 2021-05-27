@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ModalContainer = styled.div`
-    display: ${props => props.showModal ? "block" : "none"};
+    display: ${props => props.showModal ? 'block' : 'none'};
     width: 90%;
     height: 100vh;
     background-color: ${props => props.theme.body};

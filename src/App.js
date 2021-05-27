@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 import { Modal } from './components/Modal'
 import { CardsContainer } from './components/CardsContainer'
-import { FormContainer } from "./components/FormContainer"
-import { Header } from "./components/Header"
-import { ThemeProvider } from "styled-components"
+import { FormContainer } from './components/FormContainer'
+import { Header } from './components/Header'
+import { ThemeProvider } from 'styled-components'
 
 const App = () => {
   const [countries, setCountries] = useState([])
@@ -29,12 +29,12 @@ const App = () => {
     const filteredCountries = countries.filter(c => {
       const currentCountryName = c.name.toLowerCase()
       const toSearch = countryToSearch.toLowerCase()
-      return currentCountryName.includes(toSearch) 
+      return currentCountryName.includes(toSearch)
     })
     setCountryToSearch('')
     setCountriesToShow(filteredCountries)
   }
-  
+
   const handleOnChange = event => setCountryToSearch(event.target.value)
 
   const handleFilter = (event) => {
@@ -53,15 +53,15 @@ const App = () => {
   }
 
   const darkTheme = {
-    bg: "hsl(209, 23%, 22%)",
-    text: "hsl(0, 0%, 100%)",
-    body: "hsl(207, 26%, 17%)"
+    bg: 'hsl(209, 23%, 22%)',
+    text: 'hsl(0, 0%, 100%)',
+    body: 'hsl(207, 26%, 17%)'
   }
 
   const lightTheme = {
-    bg: "hsl(0, 0%, 100%)",
-    text: "#000",
-    body: "hsl(0, 0%, 98%)",
+    bg: 'hsl(0, 0%, 100%)',
+    text: '#000',
+    body: 'hsl(0, 0%, 98%)'
   }
 
   const handleToggleTheme = () => {
@@ -72,11 +72,10 @@ const App = () => {
     }
     document.body.classList.toggle('light')
   }
-  
 
   return (
-    <ThemeProvider theme={mode === 'light' ? lightTheme : darkTheme}> 
-        <Header 
+    <ThemeProvider theme={mode === 'light' ? lightTheme : darkTheme}>
+        <Header
           handleToggleTheme={handleToggleTheme}
         />
         <Modal
@@ -93,12 +92,12 @@ const App = () => {
           showMenu={showMenu}
           handleShowMenu={handleShowMenu}
         />
-        <CardsContainer 
+        <CardsContainer
           countries={countriesToShow}
           handleShowModal={handleShowModal}
         />
     </ThemeProvider>
-  );
+  )
 }
 
-export default App;
+export default App

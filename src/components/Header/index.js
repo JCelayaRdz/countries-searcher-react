@@ -1,7 +1,7 @@
 import { StyledHeader, Navbar, Title, ThemeBtn } from './styles'
 
-export const Header = ({handleToggleTheme}) => {
-    return(
+export const Header = ({ handleToggleTheme }) => {
+  return (
         <StyledHeader>
             <Navbar>
                 <Title>Where in the world?</Title>
@@ -13,5 +13,5 @@ export const Header = ({handleToggleTheme}) => {
                 </div>
             </Navbar>
         </StyledHeader>
-    )
+  )
 }

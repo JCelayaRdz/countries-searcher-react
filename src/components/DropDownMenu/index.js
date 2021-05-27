@@ -1,6 +1,6 @@
-import { Container, DropdownBtn, DropDownDiv, Icon, RegionBtn } from "./styles";
+import { Container, DropdownBtn, DropDownDiv, Icon, RegionBtn } from './styles'
 
-export const DropDownMenu = ({handleFilter, showMenu, handleShowMenu}) => (
+export const DropDownMenu = ({ handleFilter, showMenu, handleShowMenu }) => (
     <Container showMenu={showMenu}>
         <DropdownBtn onClick={handleShowMenu}>
             Filter by Region

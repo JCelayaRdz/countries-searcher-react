@@ -1,8 +1,8 @@
-import { Container } from "./styles"
+import { Container } from './styles'
 import { Form } from '../Form'
-import { DropDownMenu } from "../DropDownMenu"
+import { DropDownMenu } from '../DropDownMenu'
 
-export const FormContainer = ({handleOnSubmit, handleOnChange, handleFilter, countryToSearch, showMenu, handleShowMenu}) => (
+export const FormContainer = ({ handleOnSubmit, handleOnChange, handleFilter, countryToSearch, showMenu, handleShowMenu }) => (
     <Container>
         <Form
             handleOnSubmit={handleOnSubmit}
