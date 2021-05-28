@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { InfoContainer, CountryImg, CountryInfo, TextInfo, List, Button, ButtonContainer, P } from './styles'
+import { Container, FlagImg, TextContainer, Paragraph, ListContainer, List, Button, ButtonContainer, P } from './styles'
 
 export const ModalInfo = ({ country, setCountry }) => {
   const [borderCountries, setBorderCountries] = useState([])
@@ -15,66 +15,54 @@ export const ModalInfo = ({ country, setCountry }) => {
   }, [country])
 
   return (
-        <InfoContainer>
-            <CountryImg src={country.flag}/>
-            <CountryInfo>
+        <Container>
+            <FlagImg src={country.flag}/>
+            <TextContainer>
                 <h2>{country.name}</h2>
-                <TextInfo>
+                <ListContainer>
                     <List>
                         <li>
-                            <P>Native name: </P>
-                            {country.nativeName}
+                            <Paragraph>Native name: </Paragraph>{country.nativeName}
                         </li>
                         <li>
-                            <P>Population: </P>
-                            {country.population}
+                            <Paragraph>Population: </Paragraph> {country.population}
                         </li>
                         <li>
-                            <P>Region: </P>
-                            {country.region}
+                            <Paragraph>Region: </Paragraph>{country.region}
                         </li>
                         <li>
-                            <P>Subregion: </P>
-                            {country.subregion}
+                            <Paragraph>Sub region: </Paragraph> {country.subregion}
                         </li>
                         <li>
-                            <P>Capital: </P>
-                            {country.capital}
+                            <Paragraph>Capital: </Paragraph> {country.capital}
                         </li>
                     </List>
                     <List>
                         <li>
-                            <P>Top Level Domain: </P>
-                            {country.topLevelDomain}
+                            <Paragraph>Top Level Domain: </Paragraph> {country.topLevelDomain}
                         </li>
                         <li>
-                            <P>Currencies: </P>
-                            {country.currencies[0].code}
+                            <Paragraph>Currencies: </Paragraph> {country.currencies[0].code}
                         </li>
                         <li>
-                            <P>Languages: </P>
-                            {country.languages.map(l => l.name).join(', ')}
+                            <Paragraph>Languages: </Paragraph> {country.languages.map(l => l.name).join(', ')}
                         </li>
                     </List>
-                </TextInfo>
-                <ButtonContainer>
-                    <div>
-                    {borderCountries.length > 0
-                      ? <>
-                                <P>Border countries:</P>
-                                {borderCountries.map(c =>
-                                    <Button
-                                        key={c.name}
-                                        onClick={() => setCountry(c)}>
-                                        {c.name}
-                                    </Button>)
-                                }
-                            </>
-                      : <></>
-                        }
-                    </div>
-                </ButtonContainer>
-            </CountryInfo>
-        </InfoContainer>
+                </ListContainer>
+                { borderCountries.length > 0 ? 
+                    <ButtonContainer>
+                        <P>Border countries: </P>
+                        {borderCountries.map(c => 
+                            <Button 
+                                key={c.name} 
+                                onClick={() => setCountry(c)}>
+                                {c.name}
+                            </Button>
+                        )}
+                    </ButtonContainer>
+                    : <></>
+                }
+            </TextContainer>
+        </Container>
   )
 }

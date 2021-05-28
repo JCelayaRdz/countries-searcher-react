@@ -1,88 +1,71 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
-export const InfoContainer = styled.div`
+export const Container = styled.div`
     margin-top: 3rem;
     display: flex;
-    height: 100%;
 
     @media (max-width: 768px) {
         flex-direction: column;
-        font-size: 14px;
     }
 `
 
-export const CountryImg = styled.img`
+export const FlagImg = styled.img`
     height: 300px;
-    width: 500px;
-
+    object-fit: cover;
+    
     @media (max-width: 768px) {
-        height: 200px;
-        width: auto;
-    }
-`
-export const CountryInfo = styled.div`
-    color: inherit;
-    width: 50vw;
-    margin-left: 4rem;
-
-    @media (max-width: 768px) {
-        margin-left: 0;
-        width: 70vw;
+        height: auto;
     }
 `
 
-export const TextInfo = styled.div`
+export const TextContainer = styled(Container)`
+    margin: 0 0 0 3rem;
+    flex-direction: column;
+    @media (max-width: 768px) {
+        margin: 0;
+    }
+`
+
+export const Paragraph = styled.p`
+    font-weight: 600;
+    display: inline;
+`
+
+export const ListContainer = styled.div`
     display: flex;
     width: 40vw;
     justify-content: space-between;
-
     @media (max-width: 768px) {
-        height: 50%;
-        width: 90vw;
+        width: 100vw;
         flex-direction: column;
-        align-content: space-evenly;
     }
 `
 
 export const List = styled.ul`
-    line-height: 30px;
     list-style: none;
-    margin: 0;
     padding: 0;
-`
-
-export const P = styled.p`
-    display: inline;
-    font-weight: 600;
+    line-height: 30px;
 `
 
 export const ButtonContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-
     @media (max-width: 768px) {
-        flex-direction: column;
-        align-items: flex-start;
         padding-bottom: 10rem;
     }
 `
 
 export const Button = styled.button`
-    background-color: ${props => props.theme.bg};
-    cursor: pointer;
-    text-align: center;
-    display: inline;
-    padding: 5px;
-    width: auto;
     border: none;
+    margin: 0 10px 10px 0;
     border-radius: 5px;
-    display: inline;
-    margin: 0 0.2rem;
-    color: inherit;
+    padding: 5px;
+    cursor: pointer;
+    background: ${props => props.theme.bg};
+    color: ${props => props.theme.text};
+`
 
+export const P = styled(Paragraph)`
+    display: inline;
     @media (max-width: 768px) {
-        margin: 0.5rem 0;
+        display: block;
     }
 `
