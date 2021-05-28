@@ -11,12 +11,13 @@ module.exports = {
     ecmaFeatures: {
       jsx: true
     },
-    ecmaVersion: 12
+    ecmaVersion: 12,
+    sourceType: 'module'
   },
   plugins: [
     'react'
   ],
   rules: {
-    'react-in-jsx-scope': false
+    'react-in-jsx-scope': 0
   }
 }
