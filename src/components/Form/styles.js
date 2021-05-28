@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 export const StyledForm = styled.form`
     width: 40%;
-    background-color: ${props => props.theme.bg};
     padding: 15px;
     border-radius: 7px;
+    background-color: ${props => props.theme.bg};
     color: ${props => props.theme.text};
 
     @media (max-width: 768px) {
@@ -20,11 +20,11 @@ export const SearchIcon = styled.i`
 
 export const Input = styled.input`
     width: 70%;
+    border: none;
+    outline: none;
     margin-left: 20px;
     background-color: inherit;
-    outline: none;
     color: inherit;
-    border: none;
 
     ::placeholder {
         color: inherit;

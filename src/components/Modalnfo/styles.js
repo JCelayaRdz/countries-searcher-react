@@ -13,10 +13,11 @@ export const InfoContainer = styled.div`
 
 export const CountryImg = styled.img`
     height: 300px;
-    object-fit: contain;
+    width: 500px;
 
     @media (max-width: 768px) {
         height: 200px;
+        width: auto;
     }
 `
 export const CountryInfo = styled.div`
@@ -34,12 +35,12 @@ export const TextInfo = styled.div`
     display: flex;
     width: 40vw;
     justify-content: space-between;
-    flex-wrap: wrap;
 
     @media (max-width: 768px) {
         height: 50%;
         width: 90vw;
-        flex-direction: row;
+        flex-direction: column;
+        align-content: space-evenly;
     }
 `
 
@@ -72,7 +73,7 @@ export const Button = styled.button`
     background-color: ${props => props.theme.bg};
     cursor: pointer;
     text-align: center;
-    display: inline-block;
+    display: inline;
     padding: 5px;
     width: auto;
     border: none;

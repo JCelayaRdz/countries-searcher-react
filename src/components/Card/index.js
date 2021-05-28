@@ -6,13 +6,13 @@ export const Card = ({ country, handleShowModal }) => (
         <Info>
             <Title>{country.name}</Title>
             <P> Population:
-                <Span>{country.population}</Span>
+                <Span> {country.population}</Span>
             </P>
             <P> Region:
-                <Span>{country.region}</Span>
+                <Span> {country.region}</Span>
             </P>
             <P> Capital:
-                <Span>{country.capital}</Span>
+                <Span> {country.capital}</Span>
             </P>
         </Info>
     </CardContainer>

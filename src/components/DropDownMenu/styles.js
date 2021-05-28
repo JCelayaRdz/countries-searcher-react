@@ -11,11 +11,11 @@ export const Container = styled.div`
 
 export const DropdownBtn = styled.button`
     padding: 15px;
-    background-color: ${props => props.theme.bg};
-    color: ${props => props.theme.text};
     border: none;
     outline: none;
     border-radius: 7px;
+    background-color: ${props => props.theme.bg};
+    color: ${props => props.theme.text};
     cursor: pointer;
 `
 

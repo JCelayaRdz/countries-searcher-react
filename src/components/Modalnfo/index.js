@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { InfoContainer, CountryImg, CountryInfo, TextInfo, List, Button, ButtonContainer,P } from './styles'
+import { InfoContainer, CountryImg, CountryInfo, TextInfo, List, Button, ButtonContainer, P } from './styles'
 
 export const ModalInfo = ({ country, setCountry }) => {
   const [borderCountries, setBorderCountries] = useState([])
@@ -22,7 +22,7 @@ export const ModalInfo = ({ country, setCountry }) => {
                 <TextInfo>
                     <List>
                         <li>
-                            <P>Native name: </P> 
+                            <P>Native name: </P>
                             {country.nativeName}
                         </li>
                         <li>
@@ -30,7 +30,7 @@ export const ModalInfo = ({ country, setCountry }) => {
                             {country.population}
                         </li>
                         <li>
-                            <P>Region: </P> 
+                            <P>Region: </P>
                             {country.region}
                         </li>
                         <li>
@@ -44,7 +44,7 @@ export const ModalInfo = ({ country, setCountry }) => {
                     </List>
                     <List>
                         <li>
-                            <P>Top Level Domain: </P> 
+                            <P>Top Level Domain: </P>
                             {country.topLevelDomain}
                         </li>
                         <li>
@@ -58,19 +58,21 @@ export const ModalInfo = ({ country, setCountry }) => {
                     </List>
                 </TextInfo>
                 <ButtonContainer>
+                    <div>
                     {borderCountries.length > 0
                       ? <>
-                            <P>Border countries:</P>
-                            {borderCountries.map(c =>
-                                <Button 
-                                    key={c.name} 
-                                    onClick={() => setCountry(c)}>
-                                    {c.name}
-                                </Button>)
-                            }
-                        </>
+                                <P>Border countries:</P>
+                                {borderCountries.map(c =>
+                                    <Button
+                                        key={c.name}
+                                        onClick={() => setCountry(c)}>
+                                        {c.name}
+                                    </Button>)
+                                }
+                            </>
                       : <></>
-                    }
+                        }
+                    </div>
                 </ButtonContainer>
             </CountryInfo>
         </InfoContainer>
