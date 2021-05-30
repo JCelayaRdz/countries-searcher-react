@@ -1,7 +1,8 @@
 import { ModalInfo } from '../Modalnfo'
 import { ModalBtn, ModalContainer, Icon } from './styles'
+import PropTypes from 'prop-types'
 
-export const Modal = ({ showModal, setShowModal, modalCountry, setModalCountry }) => (
+const Modal = ({ showModal, setShowModal, modalCountry, setModalCountry }) => (
   showModal
     ? <ModalContainer showModal={showModal}>
         <ModalBtn onClick={() => setShowModal(false)}>
@@ -12,3 +13,12 @@ export const Modal = ({ showModal, setShowModal, modalCountry, setModalCountry }
     </ModalContainer>
     : <div></div>
 )
+
+Modal.propTypes = {
+  showModal: PropTypes.bool.isRequired,
+  setShowModal: PropTypes.func.isRequired,
+  modalCountry: PropTypes.object.isRequired,
+  setModalCountry: PropTypes.func.isRequired
+}
+
+export { Modal }

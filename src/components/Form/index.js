@@ -1,6 +1,7 @@
 import { SearchIcon, StyledForm, Input } from './styles'
+import PropTypes from 'prop-types'
 
-export const Form = ({ handleOnSubmit, handleOnChange, countryToSearch }) => (
+const Form = ({ handleOnSubmit, handleOnChange, countryToSearch }) => (
     <StyledForm onSubmit={handleOnSubmit}>
         <SearchIcon className="fas fa-search"/>
         <Input
@@ -10,3 +11,11 @@ export const Form = ({ handleOnSubmit, handleOnChange, countryToSearch }) => (
         />
     </StyledForm>
 )
+
+Form.propTypes = {
+  handleOnSubmit: PropTypes.func.isRequired,
+  handleOnChange: PropTypes.func.isRequired,
+  countryToSearch: PropTypes.string.isRequired
+}
+
+export { Form }

@@ -1,6 +1,7 @@
 import { Container, DropdownBtn, DropDownDiv, Icon, RegionBtn } from './styles'
+import PropTypes from 'prop-types'
 
-export const DropDownMenu = ({ handleFilter, showMenu, handleShowMenu }) => (
+const DropDownMenu = ({ handleFilter, showMenu, handleShowMenu }) => (
     <Container showMenu={showMenu}>
         <DropdownBtn onClick={handleShowMenu}>
             Filter by Region
@@ -25,3 +26,11 @@ export const DropDownMenu = ({ handleFilter, showMenu, handleShowMenu }) => (
         </DropDownDiv>
     </Container>
 )
+
+DropDownMenu.propTypes = {
+  handleFilter: PropTypes.func.isRequired,
+  showMenu: PropTypes.bool.isRequired,
+  handleShowMenu: PropTypes.func.isRequired
+}
+
+export { DropDownMenu }

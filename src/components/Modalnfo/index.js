@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Container, FlagImg, TextContainer, Paragraph, ListContainer, List, Button, ButtonContainer, P } from './styles'
+import PropTypes from 'prop-types'
 
-export const ModalInfo = ({ country, setCountry }) => {
+const ModalInfo = ({ country, setCountry }) => {
   const [borderCountries, setBorderCountries] = useState([])
 
   useEffect(() => {
@@ -49,20 +50,27 @@ export const ModalInfo = ({ country, setCountry }) => {
                         </li>
                     </List>
                 </ListContainer>
-                { borderCountries.length > 0 ? 
-                    <ButtonContainer>
+                { borderCountries.length > 0
+                  ? <ButtonContainer>
                         <P>Border countries: </P>
-                        {borderCountries.map(c => 
-                            <Button 
-                                key={c.name} 
+                        {borderCountries.map(c =>
+                            <Button
+                                key={c.name}
                                 onClick={() => setCountry(c)}>
                                 {c.name}
                             </Button>
                         )}
                     </ButtonContainer>
-                    : <></>
+                  : <></>
                 }
             </TextContainer>
         </Container>
   )
 }
+
+ModalInfo.propTypes = {
+  country: PropTypes.object.isRequired,
+  setCountry: PropTypes.func.isRequired
+}
+
+export { ModalInfo }

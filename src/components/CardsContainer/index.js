@@ -1,7 +1,8 @@
 import { Card } from '../Card'
 import { Container } from './styles'
+import PropTypes from 'prop-types'
 
-export const CardsContainer = ({ countries, handleShowModal }) => {
+const CardsContainer = ({ countries, handleShowModal }) => {
   return (
     <Container>
         {countries.map(country => (
@@ -14,3 +15,10 @@ export const CardsContainer = ({ countries, handleShowModal }) => {
     </Container>
   )
 }
+
+CardsContainer.propTypes = {
+  countries: PropTypes.array.isRequired,
+  handleShowModal: PropTypes.func.isRequired
+}
+
+export { CardsContainer }

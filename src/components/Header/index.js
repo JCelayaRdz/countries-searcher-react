@@ -1,6 +1,7 @@
 import { StyledHeader, Navbar, Title, ThemeBtn } from './styles'
+import PropTypes from 'prop-types'
 
-export const Header = ({ handleToggleTheme }) => {
+const Header = ({ handleToggleTheme }) => {
   return (
         <StyledHeader>
             <Navbar>
@@ -15,3 +16,9 @@ export const Header = ({ handleToggleTheme }) => {
         </StyledHeader>
   )
 }
+
+Header.propTypes = {
+  handleToggleTheme: PropTypes.func.isRequired
+}
+
+export { Header }

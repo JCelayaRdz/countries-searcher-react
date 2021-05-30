@@ -1,6 +1,7 @@
 import { CardContainer, Img, P, Span, Title, Info } from './styles'
+import PropTypes from 'prop-types'
 
-export const Card = ({ country, handleShowModal }) => (
+const Card = ({ country, handleShowModal }) => (
     <CardContainer onClick={handleShowModal}>
         <Img src={country.flag}/>
         <Info>
@@ -17,3 +18,10 @@ export const Card = ({ country, handleShowModal }) => (
         </Info>
     </CardContainer>
 )
+
+Card.propTypes = {
+  country: PropTypes.object.isRequired,
+  handleShowModal: PropTypes.func.isRequired
+}
+
+export { Card }
