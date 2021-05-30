@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const ModalContainer = styled.div`
     display: ${props => props.showModal ? 'block' : 'none'};
-    width: 100%;
+    width: 90%;
     height: 100vh;
     background-color: ${props => props.theme.body};
     color: ${props => props.theme.text};
@@ -11,6 +11,7 @@ export const ModalContainer = styled.div`
     left: 50%;
     top: 80px;
     transform: translateX(-50%);
+    overflow-x: hidden;
 
     @media (max-width: 768px) {
         overflow-y: scroll;

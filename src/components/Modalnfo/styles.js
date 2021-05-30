@@ -11,7 +11,6 @@ export const Container = styled.div`
 
 export const FlagImg = styled.img`
     height: 300px;
-    padding: 20px;
     object-fit: contain;
     
     @media (max-width: 768px) {
