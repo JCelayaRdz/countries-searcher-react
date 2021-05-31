@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Card = ({ country, handleShowModal }) => (
     <CardContainer onClick={handleShowModal}>
-        <Img src={country.flag}/>
+        <Img src={country.flag} alt={`${country.flag} flag`}/>
         <Info>
             <Title>{country.name}</Title>
             <P> Population:

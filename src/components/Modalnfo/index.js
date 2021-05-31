@@ -17,7 +17,7 @@ const ModalInfo = ({ country, setCountry }) => {
 
   return (
         <Container>
-            <FlagImg src={country.flag}/>
+            <FlagImg src={country.flag} alt={`${country.flag} flag`}/>
             <TextContainer>
                 <h2>{country.name}</h2>
                 <ListContainer>
