@@ -12,10 +12,6 @@ export const ModalContainer = styled.div`
     top: 80px;
     transform: translateX(-50%);
     overflow-x: hidden;
-
-    @media (max-width: 768px) {
-        overflow-y: scroll;
-    }
 `
 
 export const ModalBtn = styled.button`
